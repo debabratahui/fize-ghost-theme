@@ -1,0 +1,231 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+
+{{!-- The main content area --}}
+<main id="site-main">
+    <div class="container">
+        {{!-- Section 1 --}}
+        <div class="row row-margin">
+            {{#get "posts" include="tags" limit="all"}}
+                {{#foreach posts}}
+                    {{#has tag="Section 1"}}
+                    <div class="col-md-6 float-sm-right">
+                        <div class="center-vertical">
+                        {{content}}
+                        </div>
+                    </div>
+                    <div class="col-md-6 float-sm-left d-md-block hidden-sm">
+                        {{#if feature_image}}
+                            <img style="max-width: 100%;" src="{{img_url feature_image }}">
+                        {{/if}}
+                    </div>
+                    {{/has}}
+                {{/foreach}}
+            {{/get}}
+        </div>
+
+        {{!-- Section 2 --}}
+        <div class="row row-margin">
+                
+        {{#get "posts" include="tags"  limit="all"}}
+              {{!-- {{log posts}} --}}
+            {{#foreach posts}}
+                
+                    {{#has tag="Section 2"}}
+                    <div class="col-md-4">
+                        <div class="section-2-card">
+                            <div>
+                            {{#if feature_image}}
+                                <img style="width: 50px;" src="{{img_url feature_image }}">
+                            {{/if}}
+                            </div>
+                            <div>
+                                {{#if title}}
+                                <h4>{{title}}</h4>
+                                {{/if}}
+                                <p>{{content}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {{/has}}
+            {{/foreach}}
+        {{/get}}
+                                    
+                   
+        </div>
+
+        {{!-- Section 3 --}}
+        <div class="row row-margin">
+            {{#get "posts" include="tags"}}
+                {{#foreach posts }}
+                        {{#has tag="Section 3"}}
+                        <div class="col-md-6">
+                            {{#if feature_image}}
+                            <div>
+                                <img style="max-width: 100%;" src="{{img_url feature_image size="s"}}">
+                            </div>
+                            {{/if}}
+                        </div>
+                        <div class="col-md-6">       
+                            <div class="section-3-style ">
+                            {{content}}
+                            </div>
+                        </div>
+                        {{/has}}
+                {{/foreach}}
+            {{/get}}
+        </div>
+
+        {{!-- Section 4 --}}
+        <div class="row row-margin">
+                        
+            {{#get "posts" include="tags"}}
+                {{#foreach posts }}
+
+                        {{#has tag="Section 4"}}
+                            {{!-- {{> "link-card"}} --}}
+                        <div class="col-md-4">
+                            <div class="section-4-card">
+                                <div>
+                                {{#if feature_image}}
+                                    <img style="width: 50px;" src="{{img_url feature_image size="s"}}">
+                                {{/if}}
+                                </div>
+                                <div>
+                                    {{#if title}}
+                                    <h4>{{title}}</h4>
+                                    {{/if}}
+                                    {{!-- {{#if content}} --}}
+                                    <p>{{content}}</p>
+                                    {{!-- {{/if}} --}}
+                                </div>
+                            </div>
+                        </div>
+                        {{/has}}
+                {{/foreach}}
+            {{/get}}                     
+        </div>
+
+        {{!-- Section 5 --}}
+        <div class="row row-margin">
+                        
+            {{#get "posts" include="tags"}}
+                {{#foreach posts }}
+
+                        {{#has tag="Section 5"}}
+                            {{!-- {{> "link-card"}} --}}
+                        <div class="col-md-12">
+                            <div style="display:block">
+                                <div>
+                                {{#if feature_image}}
+                                    <img style="width: 50px;" src="{{img_url feature_image size="s"}}">
+                                {{/if}}
+                                </div>
+                                <div>
+                                    {{#if title}}
+                                    <h4 class="section-5-title">{{title}}</h4>
+                                    {{/if}}
+                                    <span class="section-5-content">{{content}}</span>
+
+                                </div>
+                            </div>
+                        </div>
+                        {{/has}}
+                {{/foreach}}
+            {{/get}}                     
+        </div>
+
+        {{!-- Section 6 --}}
+        <div class="row row-margin">
+                        
+            {{#get "posts" include="tags"}}
+                {{#foreach posts }}
+
+                        {{#has tag="Section 6"}}    
+                        <div class="col-md-4">
+                            <div class="section-6-card" style="display:block">
+                                <div>
+                                {{#if feature_image}}
+                                    <img style="width: 50px; margin-bottom:20px;" src="{{img_url feature_image size="s"}}">
+                                {{/if}}
+                                </div>
+                                <div>
+                                    {{#if title}}
+                                    <h4>{{title}}</h4>
+                                    {{/if}}
+                                    <span>{{content}}</span>
+
+                                </div>
+                            </div>
+                        </div>
+                        {{/has}}
+                {{/foreach}}
+            {{/get}}                     
+        </div>  
+    </div>
+
+    <div class="container">
+        {{!-- Section 7 --}}
+        <div class="row row-margin">
+             {{#get "posts" include="tags"}}
+                {{#foreach posts }}
+                        {{#has tag="Section 7"}}
+                        <div class="col-md-5">
+                            <div class="section-7">
+                                {{content}}
+                            </div>
+                        </div>
+                        {{/has}}
+                {{/foreach}}
+                {{#foreach posts }}
+                    {{#has tag="Section 7 gallery"}}
+                        <div class="col-md-7">
+                            <div class="section-7-gallery">
+                                {{content}}
+                            </div>
+                        </div>
+                    {{/has}}
+                {{/foreach}}
+            {{/get}}
+        </div>
+
+
+        {{!-- Section 8 --}}
+        <div class="row row-margin">
+             {{#get "posts" include="tags"}}
+                {{#foreach posts }}
+                        {{#has tag="Section 8"}}
+                        <div class="col-md-12">
+                            <div class="section-8-card">
+                                {{content}}
+                            </div>
+                        </div>
+                        {{/has}}
+                {{/foreach}}
+            {{/get}}
+        </div>
+    </div>
+
+
+     {{!-- Section 9 --}}
+        <div class="container">
+        <div class="row row-margin">
+             {{#get "posts" include="tags"}}
+                {{#foreach posts }}
+                        {{#has tag="Section 9"}}
+                        <div class="col-md-6">
+                        {{#if feature_image}}
+                            <img style="width: 100px; margin-bottom:20px;" src="{{img_url feature_image }}">
+                        {{/if}}
+                        </div>
+                        {{content}}
+
+                        {{/has}}
+                {{/foreach}}
+            {{/get}}
+        </div>
+    </div>
+    </div>
+</main>
